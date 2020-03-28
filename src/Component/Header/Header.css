@@ -1,0 +1,49 @@
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+  padding: 5px;
+}
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-link {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #000;
+}
+.signup {
+  background-color: #f5072a;
+  border-radius: 20px;
+  color: #fff;
+  padding: 5px 20px;
+}
+.banner {
+  height: 80vmin;
+  background: url(../../resources/bannerbackground.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.search {
+  border-radius: 20px;
+  color: gray;
+  padding: 5px 20px;
+}
+.category {
+  display: flex;
+  justify-content: center;
+}
+a {
+
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.App-link {
+  /* color: #61dafb; */
+}
