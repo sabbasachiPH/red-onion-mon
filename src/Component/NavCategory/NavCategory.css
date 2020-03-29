@@ -1,0 +1,16 @@
+.category {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+.linkCategory {
+  color: gray;
+  margin: 5px 15px;
+  padding: 5px;
+}
+.linkCategory:hover {
+  color: #f5072a;
+  text-decoration: none;
+  border-bottom: 3px solid #f5072a;
+  box-shadow: 5px 5px 10px lightgray;
+}

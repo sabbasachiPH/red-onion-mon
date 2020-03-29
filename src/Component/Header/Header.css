@@ -1,9 +1,9 @@
-.App-logo {
+.logo {
   height: 10vmin;
   pointer-events: none;
   padding: 5px;
 }
-.App-header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,6 +13,9 @@
   text-decoration: none;
   color: #000;
 }
+.header-link:hover {
+  text-decoration: none;
+}
 .signup {
   background-color: #f5072a;
   border-radius: 20px;
@@ -20,7 +23,7 @@
   padding: 5px 20px;
 }
 .banner {
-  height: 80vmin;
+  height: 40vmin;
   background: url(../../resources/bannerbackground.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -34,16 +37,8 @@
   color: gray;
   padding: 5px 20px;
 }
-.category {
-  display: flex;
-  justify-content: center;
-}
-a {
 
+a {
   text-decoration: none;
   margin-left: 10px;
-}
-
-.App-link {
-  /* color: #61dafb; */
 }

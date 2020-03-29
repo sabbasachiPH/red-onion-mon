@@ -8,8 +8,8 @@ import logo from "../../resources/logo2.png";
 const Header = () => {
   return (
     <div className="container">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <header className="header">
+        <img src={logo} className="logo" alt="logo" />
         <div className="header-right">
           <FontAwesomeIcon icon={faShoppingCart} className="header-link" />
           <a href="/" className="header-link">

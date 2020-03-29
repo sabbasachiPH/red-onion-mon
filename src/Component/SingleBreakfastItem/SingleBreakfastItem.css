@@ -1,0 +1,20 @@
+.itemCard img {
+  height: 250px;
+  width: auto;
+  border-radius: 50%;
+}
+.itemCard {
+  height: 450px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  background-color: whitesmoke;
+  border: 1px solid #303031;
+}
+.itemCard:hover {
+  box-shadow: 5px 5px 40px darkgray;
+}
