@@ -5,11 +5,12 @@ import Breakfast from "../Breakfast/Breakfast";
 import Launch from "../Launch/Launch";
 import Dinner from "../Dinner/Dinner";
 import NotFound from "../NotFound/NotFound";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
 const NavCategory = () => {
   return (
     <div>
-      <nav className="category">
+      <nav className="category nav">
         <a className="linkCategory" href="/breakfast">
           Breakfast
         </a>
@@ -20,7 +21,8 @@ const NavCategory = () => {
           Dinner
         </a>
       </nav>
-      {/*<Nav> 
+      <Router>
+        {/* <nav>
           <ul className="category">
             <li>
               <Link className="linkCategory" to="/breakfast">
@@ -37,22 +39,30 @@ const NavCategory = () => {
                 Dinner
               </Link>
             </li>
-          </ul> 
-          </Nav>*/}
+          </ul>
+        </nav> */}
 
-      <Router>
         <Switch>
-          <Route path="/breakfast">
+          <Route exact path="/breakfast">
             <Breakfast></Breakfast>
           </Route>
           <Route path="/launch">
             <Launch></Launch>
           </Route>
-          <Route path="/dinner">
+          <Route exact path="/dinner">
             <Dinner></Dinner>
           </Route>
           <Route exact path="/">
             <Launch></Launch>
+          </Route>
+          <Route path="/breakfast/:id">
+            <ItemDetail></ItemDetail>
+          </Route>
+          <Route path="/lunch/:id">
+            <ItemDetail></ItemDetail>
+          </Route>
+          <Route path="/dinner/:id">
+            <ItemDetail></ItemDetail>
           </Route>
           <Route path="*">
             <NotFound></NotFound>

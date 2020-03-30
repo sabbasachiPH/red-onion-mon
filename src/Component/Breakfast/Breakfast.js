@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Breakfast.css";
 import fakeData from "../../resources/DummyData/fakeData";
-import SingleBreakfastItem from "../SingleBreakfastItem/SingleBreakfastItem";
+import SingleItem from "../SingleItem/SingleItem";
 
 const Breakfast = props => {
   const sixItem = fakeData
@@ -11,15 +11,13 @@ const Breakfast = props => {
   // console.log(sixItem);
   const [item, setItem] = useState(sixItem);
 
-  const showAllBreafastItems = sixItem.map(sbi => (
-    <SingleBreakfastItem
-      key={sbi.id}
-      singleBreakfastItem={sbi}
-    ></SingleBreakfastItem>
+  const showAllItems = sixItem.map(sbi => (
+    <SingleItem key={sbi.id} singleItem={sbi}></SingleItem>
   ));
+
   return (
-    <div className="breakfastContainer">
-      {showAllBreafastItems}
+    <div className="container breakfastContainer d-flex flex-wrap justify-content-around">
+      {showAllItems}
     </div>
   );
 };

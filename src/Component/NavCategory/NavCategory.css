@@ -1,11 +1,14 @@
 .category {
   display: flex;
   justify-content: center;
+  align-items: center;
   list-style-type: none;
+  height: 50px;
+  margin-bottom: 15px;
 }
 .linkCategory {
   color: gray;
-  margin: 5px 15px;
+  /* margin: 5px 15px; */
   padding: 5px;
 }
 .linkCategory:hover {

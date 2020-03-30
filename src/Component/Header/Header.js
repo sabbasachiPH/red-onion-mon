@@ -8,7 +8,7 @@ import logo from "../../resources/logo2.png";
 const Header = () => {
   return (
     <div className="container">
-      <header className="header">
+      <header className="header d-flex flex-wrap">
         <img src={logo} className="logo" alt="logo" />
         <div className="header-right">
           <FontAwesomeIcon icon={faShoppingCart} className="header-link" />
