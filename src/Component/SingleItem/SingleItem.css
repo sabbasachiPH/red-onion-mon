@@ -12,11 +12,19 @@
   justify-content: space-around;
   align-items: center;
   margin-bottom: 5px;
-  border: 1px solid #303031;
 }
-.itemCard h3 {
+/* .itemCard h5 {
   color: rgb(243, 8, 192);
-}
+} */
 .itemCard:hover {
-  box-shadow: 5px 5px 40px darkgray;
+  box-shadow: 5px 5px 20px darkgray;
+}
+.route-link {
+  color: gray;
+  text-decoration: inherit;
+}
+
+.route-link:hover {
+  color: #000;
+  text-decoration: inherit;
 }
