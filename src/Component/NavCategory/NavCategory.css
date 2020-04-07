@@ -11,9 +11,23 @@
   /* margin: 5px 15px; */
   padding: 5px;
 }
+.active,
 .linkCategory:hover {
   color: #f5072a;
   text-decoration: none;
   border-bottom: 3px solid #f5072a;
   box-shadow: 5px 5px 10px lightgray;
 }
+/* a {
+  color: black;
+}
+a:hover {
+  color: white;
+}
+Link:active,
+nav a:nth-child(2) {
+  color: #f5072a;
+  text-decoration: none;
+  border-bottom: 3px solid #f5072a;
+  box-shadow: 5px 5px 10px lightgray;
+} */

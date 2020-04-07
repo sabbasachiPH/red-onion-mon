@@ -4,7 +4,9 @@ import React from "react";
 const Inventory = () => {
   // const product = fakeData[0];
 
-  fetch("http://localhost:4200/showAllmenu")
+  // fetch("http://localhost:4200/showAllmenu")
+
+  fetch("https://red-mongo.herokuapp.com/showAllmenu")
     .then((res) => res.json())
     .then((data) => displayMenu(data));
 
@@ -46,7 +48,9 @@ const Inventory = () => {
     const picture = document.getElementById("picture").value;
     const menu = { menuName, price, category, description, picture };
 
-    fetch("http://localhost:4200/addMenu", {
+    //fetch("http://localhost:4200/addMenu", {
+
+    fetch("https://red-mongo.herokuapp.com/addMenu", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,0 +1,24 @@
+.headerStyle {
+  height: 100vh;
+  text-align: center;
+  padding: 10px;
+  background-image: url("https://i.ibb.co/4MmdFKy/bannerbackground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.form-container {
+  width: 400px;
+  margin: 0 auto;
+}
+.form-container img {
+  width: 70%;
+  height: auto;
+  margin-bottom: 40px;
+}
+.btnSignIn {
+  width: 400px;
+  padding: 15px;
+  background-color: #f5072a;
+  color: #ffffff;
+  font-weight: bold;
+}

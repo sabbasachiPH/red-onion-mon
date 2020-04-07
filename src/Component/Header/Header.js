@@ -4,41 +4,89 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../resources/logo2.png";
 import { Link } from "react-router-dom";
+import { useAuth } from "../Login/useAuth";
 
 const Header = () => {
+  const auth = useAuth();
+  console.log(auth);
+
   return (
-    <div className="container">
-      <header className="header d-flex flex-wrap">
+    <div className="headerContainer d-flex">
+      <div className="divLeft d-flex ">
         <img src={logo} className="logo" alt="logo" />
-        <div className="header-right">
-          <FontAwesomeIcon icon={faShoppingCart} className="header-link" />
-          <Link to="/login" className="header-link">
-            Login
-          </Link>
-          <Link to="/signup" className="header-link signup">
-            Sign up
-          </Link>
-          <Link to="/inventory" className="header-link">
-            Add Inventory
-          </Link>
-          {/* <button className="btn btn-primary">Login</button>
-          <button className="btn btn-danger">Sign up</button> */}
-        </div>
-      </header>
-      <div className="banner">
-        <h1>Best food waiting for your belly</h1>
-        <div>
-          <input
-            type="text"
-            className="search"
-            placeholder="Search food items"
-          />
-          <button type="submit" className="signup">
-            Search
-          </button>
-        </div>
+      </div>
+      <div className="divRight d-flex justify-content-end align-items-center ">
+        <FontAwesomeIcon icon={faShoppingCart} className="header-link" />{" "}
+        {auth.user ? (
+          <div>
+            <img src={auth.user.photo} className="profilepic" />
+            <Link to="/" className="header-link signup" onClick={auth.signOut}>
+              Sign Out
+            </Link>
+          </div>
+        ) : (
+          <div>
+            <Link to="/login" className="header-link">
+              Log In
+            </Link>
+            <Link
+              to="/login"
+              className="header-link signup"
+              onClick={auth.signOut}
+            >
+              Sign Up
+            </Link>
+          </div>
+        )}
       </div>
     </div>
+    // <div className="container">
+    //   <header className="header d-flex flex-1 flex-wrap">
+    //     <div className="header-left">
+    //       <img src={logo} className="logo" alt="logo" />
+    //     </div>
+    //     <div className="d-flex flex-10 header-right">
+    //       <FontAwesomeIcon icon={faShoppingCart} className="header-link" />{" "}
+    //       {auth.user ? (
+    //         <div className="d-flex align-items-center">
+    //           <FontAwesomeIcon icon={faShoppingCart} className="header-link" />{" "}
+    //           <img
+    //             src={auth.user.photo}
+    //             className="profilepic"
+    //
+    //           />
+    //           {auth.user.name}
+    //           <Link className="header-link signup" onClick={auth.signOut}>
+    //             Sign Out
+    //           </Link>
+    //         </div>
+    //       ) : (
+    //         <Link
+    //           to="/"
+    //           className="header-link"
+    //           onClick={auth.signInWithGoogle}
+    //         >
+    //           Login
+    //         </Link>
+    //       )}
+    //       {
+    //         auth.user ? (
+    //           ""
+    //         ) : (
+    //           <Link to="/login" className="header-link signup">
+    //             Sign up
+    //           </Link>
+    //         ) /*}
+    //       {/* <Link to="/inventory" className="header-link">
+    //         Add Inventory
+    //       </Link> }
+    //       {/* <button className="btn btn-primary">Login</button>
+    //       <button className="btn btn-danger">Sign up</button> */
+    //       }
+    //     </div>
+    //   </header>
+    //   
+    // </div>
   );
 };
 

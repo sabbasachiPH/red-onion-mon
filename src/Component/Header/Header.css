@@ -1,7 +1,22 @@
-.logo {
+.divLeft {
+  flex: 3.5;
   height: 10vmin;
+}
+.divRight {
+  flex: 10;
+
+}
+
+.logo {
+  height: inherit;
   pointer-events: none;
   padding: 5px;
+}
+.profilepic {
+  height: 10vmin;
+  width: auto;
+  border-radius: 50%;
+  margin-left: 10px;
 }
 .header {
   display: flex;

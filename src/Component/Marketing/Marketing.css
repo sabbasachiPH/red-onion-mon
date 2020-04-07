@@ -1,0 +1,10 @@
+.card {
+  border: none;
+}
+.card-body {
+  display: flex;
+  align-items: flex-start;
+}
+.card-body img {
+  margin-right: 5px;
+}
