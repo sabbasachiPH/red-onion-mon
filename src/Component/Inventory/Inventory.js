@@ -124,10 +124,13 @@ const Inventory = () => {
         <button
           className="btn btn-primary"
           id="addMenu"
-          onClick={handleAddMenu}
+          disabled="disabled"
+          // onClick={handleAddMenu}
         >
           Add New Menu
         </button>
+        <button disabled="disabled">disabled</button>
+
         {/* <button
           className="btn btn-primary"
           id="addMenu"

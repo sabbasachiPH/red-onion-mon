@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -33,7 +34,14 @@ const Footer = () => {
         <div className="bottom-right">
           <ul className="d-flex">
             <li>Privacy Policy</li>
-            <li>Terms of Use</li>
+            <li>
+              <Link
+                to="inventory"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Add Invertory
+              </Link>
+            </li>
             <li>Pricing</li>
           </ul>
         </div>

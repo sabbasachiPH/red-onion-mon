@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-// import "../Breakfast/Breakfast.css";
 // import fakeData from "../../resources/DummyData/fakeData";
 import SingleItem from "../SingleItem/SingleItem";
 import Banner from "../Banner/Banner";
+import Marketing from "../Marketing/Marketing";
+import Footer from "../Footer/Footer";
 import "./DisplayAll.css";
 
 const DisplayAll = () => {
@@ -13,7 +14,7 @@ const DisplayAll = () => {
     fetch("https://red-mongo.herokuapp.com/showAllmenu")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        //console.log(data);
         const randomData = shuffle(data);
         setItem(
           //   randomData.filter((me) => me.category === "dinner").slice(0, 6)
@@ -98,6 +99,8 @@ const DisplayAll = () => {
       <div className="breakfastContainer d-flex flex-wrap justify-content-around">
         {showCustomList ? showCustomList : showSixLunchItems}
       </div>
+      <Marketing></Marketing>
+      <Footer></Footer>
     </div>
   );
 };

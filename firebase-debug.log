@@ -1,0 +1,36 @@
+[debug] [2020-04-08T14:05:38.621Z] ----------------------------------------------------------------------
+[debug] [2020-04-08T14:05:38.623Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-04-08T14:05:38.624Z] CLI Version:   8.0.2
+[debug] [2020-04-08T14:05:38.624Z] Platform:      win32
+[debug] [2020-04-08T14:05:38.624Z] Node Version:  v12.16.1
+[debug] [2020-04-08T14:05:38.625Z] Time:          Wed Apr 08 2020 20:05:38 GMT+0600 (Bangladesh Standard Time)
+[debug] [2020-04-08T14:05:38.625Z] ----------------------------------------------------------------------
+[debug] [2020-04-08T14:05:38.625Z] 
+[debug] [2020-04-08T14:05:38.634Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-08T14:05:38.634Z] > authorizing via signed-in user
+[debug] [2020-04-08T14:05:38.634Z] [iam] checking project red-onion-mon for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-04-08T14:05:38.637Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/red-onion-mon:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-04-08T14:05:41.553Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 08 Apr 2020 14:05:43 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=2514","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-08T14:05:41.560Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-onion-mon  
+ 
+[debug] [2020-04-08T14:05:47.682Z] <<< HTTP RESPONSE 500 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Wed, 08 Apr 2020 14:05:49 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-08T14:05:47.682Z] <<< HTTP RESPONSE BODY {"error":{"code":500,"message":"Internal error encountered.","status":"INTERNAL"}}
+[debug] [2020-04-08T14:05:47.686Z] HTTP Error: 500, Internal error encountered.
+[debug] [2020-04-08T14:05:47.928Z] FirebaseError: HTTP Error: 500, Internal error encountered.
+    at module.exports (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:38:12)
+    at Request._callback (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:40:35)
+    at Request.self.callback (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:311:20)
+    at Request.EventEmitter.emit (domain.js:482:12)
+    at Request.<anonymous> (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:1154:10)
+    at Request.emit (events.js:311:20)
+    at Request.EventEmitter.emit (domain.js:482:12)
+    at IncomingMessage.<anonymous> (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (events.js:417:28)
+    at IncomingMessage.emit (events.js:323:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:482:12)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+[error] 
+[error] Error: Failed to get Firebase project red-onion-mon. Please make sure the project exists and your account has permission to access it.

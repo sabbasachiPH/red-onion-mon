@@ -12,14 +12,20 @@ const Header = () => {
 
   return (
     <div className="headerContainer d-flex">
-      <div className="divLeft d-flex ">
-        <img src={logo} className="logo" alt="logo" />
-      </div>
+      <Link to="/">
+        <div className="divLeft d-flex ">
+          <img src={logo} className="logo" alt="logo" />
+        </div>
+      </Link>
       <div className="divRight d-flex justify-content-end align-items-center ">
         <FontAwesomeIcon icon={faShoppingCart} className="header-link" />{" "}
         {auth.user ? (
           <div>
-            <img src={auth.user.photo} className="profilepic" />
+            <img
+              src={auth.user.photo}
+              className="profilepic"
+              alt="profileUser"
+            />
             <Link to="/" className="header-link signup" onClick={auth.signOut}>
               Sign Out
             </Link>
@@ -85,7 +91,7 @@ const Header = () => {
     //       }
     //     </div>
     //   </header>
-    //   
+    //
     // </div>
   );
 };
