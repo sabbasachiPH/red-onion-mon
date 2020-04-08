@@ -9,6 +9,7 @@ import Inventory from "./Component/Inventory/Inventory";
 import { AuthContextProvider } from "./Component/Login/useAuth";
 import OrderReview from "./Component/OrderReview/OrderReview";
 import DisplayAll from "./Component/DisplayAll/DisplayAll";
+import Shipment from "./Component/Shipment/Shipment";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="/shipment">
+              <Shipment></Shipment>
             </Route>
             <Route path="/orderReview">
               <OrderReview></OrderReview>

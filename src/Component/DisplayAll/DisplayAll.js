@@ -28,21 +28,21 @@ const DisplayAll = () => {
     .map((sbi) => <SingleItem key={sbi.id} singleItem={sbi}></SingleItem>)
     .slice(0, 6);
 
-  const B = item.filter((e) => e.category === "breakfast");
-  const L = item.filter((e) => e.category === "lunch");
-  const D = item.filter((e) => e.category === "dinner");
+  const breakfast = item.filter((e) => e.cmategory === "breakfast");
+  const lunch = item.filter((e) => e.category === "lunch");
+  const dinner = item.filter((e) => e.category === "dinner");
 
-  const showB = () => {
-    setfilteredItems(B);
-    handleActiveClass();
+  const showBreakfast = (e) => {
+    setfilteredItems(breakfast);
+    handleActiveClass(e.target);
   };
-  const showL = () => {
-    setfilteredItems(L);
-    handleActiveClass();
+  const showLunch = (e) => {
+    setfilteredItems(lunch);
+    handleActiveClass(e.target);
   };
-  const showD = () => {
-    setfilteredItems(D);
-    handleActiveClass();
+  const showDinner = (e) => {
+    setfilteredItems(dinner);
+    handleActiveClass(e.target);
   };
 
   const showCustomList =
@@ -51,16 +51,20 @@ const DisplayAll = () => {
       .map((item) => <SingleItem key={item.id} singleItem={item}></SingleItem>)
       .slice(0, 6);
 
-  function handleActiveClass() {
-    const header = document.getElementById("buttonDIV");
-    const btns = header.getElementsByClassName("linkCategory");
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].addEventListener("click", function () {
-        const current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace("active", "");
-        this.className += " active";
-      });
-    }
+  function handleActiveClass(element) {
+    console.log(element);
+    // const header = document.getElementById("buttonDIV");
+    // const btns = header.getElementsByClassName("linkCategory");
+    const current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace("active", "");
+    element.className += " active";
+    // for (var i = 0; i < btns.length; i++) {
+    //   btns[i].addEventListener("click", function () {
+    //     const current = document.getElementsByClassName("active");
+    //     current[0].className = current[0].className.replace("active", "");
+    //     this.className += " active";
+    //   });
+    // }
   }
 
   function shuffle(arra1) {
@@ -86,13 +90,15 @@ const DisplayAll = () => {
     <div className="d-flex flex-column">
       <Banner></Banner>
       <div id="buttonDIV" className="d-flex justify-content-center p-2 m-2">
-        <button className="linkCategory active" onClick={() => showB()}>
+        {/* <button className="linkCategory active" onClick={() => showB()}> */}
+        <button className="linkCategory active" onClick={showBreakfast}>
           Breakfast
         </button>
-        <button className="linkCategory" onClick={() => showL()}>
+        {/* <button className="linkCategory" onClick={() => showL()}> */}
+        <button className="linkCategory" onClick={showLunch}>
           Lunch
         </button>
-        <button className="linkCategory" onClick={() => showD()}>
+        <button className="linkCategory" onClick={showDinner}>
           Dinner
         </button>
       </div>
