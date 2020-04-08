@@ -3,19 +3,18 @@ import "./SingleItem.css";
 import { Link } from "react-router-dom";
 
 const SingleItem = (props) => {
-  //console.log(props.singleItem);
+  console.log(props.singleItem);
   const {
     picture,
     price,
     menuName,
-    id,
     _id,
     category,
     description,
   } = props.singleItem;
   return (
     // <h1>What's the problem</h1>
-    <Link className="route-link" to={"/" + category + "/" + id}>
+    <Link className="route-link" to={"/" + category + "/" + _id}>
       <div className="itemCard">
         <img src={picture} alt="MenuItemPic" />
         <div className="itemCardInfo d-flex flex-column justify-content-center align-items-center">

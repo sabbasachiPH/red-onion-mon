@@ -2,17 +2,13 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./Component/Header/Header";
-import NavCategory from "./Component/NavCategory/NavCategory";
-import Breakfast from "./Component/Breakfast/Breakfast";
-import Lunch from "./Component/Lunch/Lunch";
-import Dinner from "./Component/Dinner/Dinner";
 import NotFound from "./Component/NotFound/NotFound";
 import ItemDetail from "./Component/ItemDetail/ItemDetail";
 import Login from "./Component/Login/Login";
 import Inventory from "./Component/Inventory/Inventory";
-import { createContext } from "react";
 import { AuthContextProvider } from "./Component/Login/useAuth";
 import OrderReview from "./Component/OrderReview/OrderReview";
+import DisplayAll from "./Component/DisplayAll/DisplayAll";
 
 function App() {
   return (
@@ -22,17 +18,8 @@ function App() {
           <Header></Header>
 
           <Switch>
-            <Route exact path="/breakfast">
-              <Breakfast></Breakfast>
-            </Route>
-            <Route path="/lunch">
-              <Lunch></Lunch>
-            </Route>
-            <Route exact path="/dinner">
-              <Dinner></Dinner>
-            </Route>
             <Route exact path="/">
-              <Breakfast></Breakfast>
+              <DisplayAll></DisplayAll>
             </Route>
             <Route path="/breakfast/:id">
               <ItemDetail></ItemDetail>
@@ -40,7 +27,6 @@ function App() {
             <Route path="/lunch/:id">
               <ItemDetail></ItemDetail>
             </Route>
-
             <Route path="/dinner/:id">
               <ItemDetail></ItemDetail>
             </Route>

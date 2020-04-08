@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../Login/useAuth";
 
 const OrderReview = () => {
+  const rev = useAuth();
+  console.log(rev);
+
   return (
     <div>
       <h4>Please Check your Order</h4>
