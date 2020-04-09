@@ -40,30 +40,32 @@ const Inventory = () => {
   // };
 
   const handleAddMenu = () => {
-    alert("Uncomment Your fetch Portion");
-    const menuName = document.getElementById("menuName").value;
-    const price = document.getElementById("price").value;
-    const category = document.getElementById("category").value;
-    const description = document.getElementById("description").value;
-    const picture = document.getElementById("picture").value;
-    const menu = { menuName, price, category, description, picture };
+    alert(
+      "You are not authorized to Insert New menu Please contack with the administrator"
+    );
+    // const menuName = document.getElementById("menuName").value;
+    // const price = document.getElementById("price").value;
+    // const category = document.getElementById("category").value.toLowerCase();
+    // const description = document.getElementById("description").value;
+    // const picture = document.getElementById("picture").value;
+    // const menu = { menuName, price, category, description, picture };
 
     //fetch("http://localhost:4200/addMenu", {
 
-    fetch("https://red-mongo.herokuapp.com/addMenu", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(menu), // body data type must match "Content-Type" header
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("post Successful ", data);
-        updateMenuList(data);
-        clearInput();
-        thanks();
-      });
+    // fetch("https://red-mongo.herokuapp.com/addMenu", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(menu), // body data type must match "Content-Type" header
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     console.log("post Successful ", data);
+    //     updateMenuList(data);
+    //     clearInput();
+    //     thanks();
+    //   });
   };
   function thanks() {
     const successMessage = document.getElementById("successMessage");
@@ -84,7 +86,6 @@ const Inventory = () => {
     appendMenu(menu, menuList);
     document.getElementById("menuList").innerHTML = menu.menuName;
   }
-
   return (
     <div className="container">
       <h1>Red Onion Restaurent</h1>
@@ -124,12 +125,10 @@ const Inventory = () => {
         <button
           className="btn btn-primary"
           id="addMenu"
-          disabled="disabled"
-          // onClick={handleAddMenu}
+          onClick={handleAddMenu}
         >
           Add New Menu
         </button>
-        <button disabled="disabled">disabled</button>
 
         {/* <button
           className="btn btn-primary"

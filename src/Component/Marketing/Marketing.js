@@ -18,9 +18,6 @@ const Marketing = () => {
         </p>
       </div>
       <div>
-        {/* <div className="mcard"></div>
-        <div className="mcard"></div>
-        <div className="mcard"></div> */}
         <div className="card-deck">
           <div className="card">
             <img

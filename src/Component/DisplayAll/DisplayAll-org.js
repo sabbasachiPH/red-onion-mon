@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import fakeData from "../../resources/DummyData/fakeData";
 import SingleItem from "../SingleItem/SingleItem";
 import Banner from "../Banner/Banner";
 import Marketing from "../Marketing/Marketing";
@@ -9,41 +10,61 @@ const DisplayAll = () => {
   const [item, setItem] = useState([]);
   const [filteredItems, setfilteredItems] = useState(null);
   useEffect(() => {
+    // fetch("http://localhost:4200/showAllmenu")
     fetch("https://red-mongo.herokuapp.com/showAllmenu")
       .then((res) => res.json())
       .then((data) => {
-        setItem(shuffle(data));
+        //console.log(data);
+        const randomData = shuffle(data);
+        setItem(
+          //   randomData.filter((me) => me.category === "dinner").slice(0, 6)
+          randomData
+        );
       });
   }, []);
 
   const showSixLunchItems = item
     .filter((ca) => ca.category === "breakfast")
-    .map((sbi) => <SingleItem key={sbi._id} singleItem={sbi}></SingleItem>)
+    .map((sbi) => <SingleItem key={sbi.id} singleItem={sbi}></SingleItem>)
     .slice(0, 6);
 
-  const filterData = (e) => {
-    // filter data according to the button clicked
-    const desiredCategoryName = e.target.innerText;
-    const categoryNameLowerCase = desiredCategoryName.toLowerCase();
-    const desiredList = item
-      .filter((re) => re.category === categoryNameLowerCase)
-      .slice(0, 6);
-    setfilteredItems(desiredList);
-    // change the active class
+  const breakfast = item.filter((e) => e.cmategory === "breakfast");
+  const lunch = item.filter((e) => e.category === "lunch");
+  const dinner = item.filter((e) => e.category === "dinner");
+
+  const showBreakfast = (e) => {
+    setfilteredItems(breakfast);
+    handleActiveClass(e.target);
+  };
+  const showLunch = (e) => {
+    setfilteredItems(lunch);
+    handleActiveClass(e.target);
+  };
+  const showDinner = (e) => {
+    setfilteredItems(dinner);
     handleActiveClass(e.target);
   };
 
   const showCustomList =
     filteredItems &&
     filteredItems
-      .map((item) => <SingleItem key={item._id} singleItem={item}></SingleItem>)
+      .map((item) => <SingleItem key={item.id} singleItem={item}></SingleItem>)
       .slice(0, 6);
 
   function handleActiveClass(element) {
     console.log(element);
+    // const header = document.getElementById("buttonDIV");
+    // const btns = header.getElementsByClassName("linkCategory");
     const current = document.getElementsByClassName("active");
     current[0].className = current[0].className.replace("active", "");
     element.className += " active";
+    // for (var i = 0; i < btns.length; i++) {
+    //   btns[i].addEventListener("click", function () {
+    //     const current = document.getElementsByClassName("active");
+    //     current[0].className = current[0].className.replace("active", "");
+    //     this.className += " active";
+    //   });
+    // }
   }
 
   function shuffle(arra1) {
@@ -69,13 +90,15 @@ const DisplayAll = () => {
     <div className="d-flex flex-column">
       <Banner></Banner>
       <div id="buttonDIV" className="d-flex justify-content-center p-2 m-2">
-        <button className="linkCategory active" onClick={filterData}>
+        {/* <button className="linkCategory active" onClick={() => showB()}> */}
+        <button className="linkCategory active" onClick={showBreakfast}>
           Breakfast
         </button>
-        <button className="linkCategory" onClick={filterData}>
+        {/* <button className="linkCategory" onClick={() => showL()}> */}
+        <button className="linkCategory" onClick={showLunch}>
           Lunch
         </button>
-        <button className="linkCategory" onClick={filterData}>
+        <button className="linkCategory" onClick={showDinner}>
           Dinner
         </button>
       </div>
