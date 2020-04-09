@@ -8,9 +8,6 @@
 .card-body img {
   margin-right: 5px;
 }
-@media (min-width: 689px) {
-  .card-deck {
-    display: flex;
-    flex-flow: column wrap;
-  }
+.card-deck {
+  flex-wrap: wrap;
 }
