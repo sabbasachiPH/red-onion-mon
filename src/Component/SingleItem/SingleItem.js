@@ -15,7 +15,7 @@ const SingleItem = (props) => {
   } = props.singleItem;
   return (
     // <Link className="route-link" to={"/" + category + "/" + id}>
-    <Link className="route-link" to={"/allMenu/" + id}>
+    <Link className="route-link" to={"/allMenu/" + _id}>
       <div className="itemCard">
         <img src={picture} alt="MenuItemPic" />
         <div className="itemCardInfo d-flex flex-column justify-content-center align-items-center">
