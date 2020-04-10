@@ -4,6 +4,7 @@ import Banner from "../Banner/Banner";
 import Marketing from "../Marketing/Marketing";
 import Footer from "../Footer/Footer";
 import "./DisplayAll.css";
+import NavCategory from "../NavCategory/NavCategory";
 
 const DisplayAll = () => {
   const [item, setItem] = useState([]);

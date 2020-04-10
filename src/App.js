@@ -22,7 +22,10 @@ function App() {
             <Route exact path="/">
               <DisplayAll></DisplayAll>
             </Route>
-            <Route path="/breakfast/:id">
+            <Route path="/allMenu/:id">
+              <ItemDetail></ItemDetail>
+            </Route>
+            {/* <Route path="/breakfast/:id">
               <ItemDetail></ItemDetail>
             </Route>
             <Route path="/lunch/:id">
@@ -30,7 +33,7 @@ function App() {
             </Route>
             <Route path="/dinner/:id">
               <ItemDetail></ItemDetail>
-            </Route>
+            </Route> */}
             <Route path="/login">
               <Login></Login>
             </Route>
