@@ -10,3 +10,11 @@ In this project we build the full featured restaurant management app. Using this
 2. Category wise menu list
 3. Firebase authentication system using google account and email
 
+<h2>Technology Used</h2>
+
+1. React
+2. Express.js
+3. MOngoDB
+4. Node.js
+5. Firebase
+
